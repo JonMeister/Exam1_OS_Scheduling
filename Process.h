@@ -18,9 +18,9 @@ protected:
     int TAT;
     int remTime;
     int P;
+    int Q;
 public:
-    Process(std::string name, int BT, int AT,int P);
-    std::string setName(std::string name);
+    Process(std::string name, int BT, int AT,int Q,int P);
     std::string getName();
 
     int getBT();
@@ -30,7 +30,8 @@ public:
     int getWT();
     int getTAT();
     int getRemTime();
-    int getPriority();
+    int getP();
+    int getQ();
 
     void setCT(int CT);
     void setRT(int RT);

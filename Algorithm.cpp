@@ -9,29 +9,38 @@
 
 Algorithm::Algorithm() = default;
 
-bool orderByATAndName(Process* a, Process* b) {
-    if(a->getAT() == b->getAT()) {
-        return a->getName() < b->getName();
+bool orderByPriorityATAndName(Process* a, Process* b) {
+    if (a->getP() < b->getP()) {
+        if(a->getAT() == b->getAT()) {
+            return a->getName() < b->getName();
+        }
+        return a->getAT() < b->getAT();
     }
-    return a->getAT() < b->getAT();
+    return a->getP() < b->getP();
 }
-bool orderByRemTimeAndName(Process* a, Process* b) {
-    if(a->getRemTime() == b->getRemTime()) {
-        return a->getName() < b->getName();
+bool orderByPriorityRemTimeAndName(Process* a, Process* b) {
+    if(a->getP() == b->getP()) {
+        if(a->getRemTime() == b->getRemTime()) {
+            return a->getName() < b->getName();
+        }
+        return a->getRemTime() < b->getRemTime();
     }
-    return a->getRemTime() < b->getRemTime();
-}
-bool orderByBTAndName(Process* a, Process* b) {
-    if(a->getBT() == b->getBT()) {
-        return a->getName() < b->getName();
-    }
-    return a->getBT() < b->getBT();
-}
 
+    return a->getP() < b->getP();
+}
+bool orderByPriorityBTAndName(Process* a, Process* b) {
+    if(a->getP() == b->getP()) {
+        if(a->getBT() == b->getBT()) {
+            return a->getName() < b->getName();
+        }
+        return a->getBT() < b->getBT();
+    }
+    return a->getP() < b->getP();
+}
 
 void Algorithm::FCFS(std::vector<Process*> processVector,int& time1) {
-    std::sort(processVector.begin(), processVector.end(), orderByATAndName);
-    std::cout << "Sorting processes by AT and name." << std::endl;
+    std::sort(processVector.begin(), processVector.end(), orderByPriorityATAndName);
+    std::cout << "Executing First Come First Served Algorithm." << std::endl;
     for (Process* process : processVector) {
 
         std::cout <<"Attending process "<<process->getName()<<" in time: "<<time1<<std::endl;
@@ -42,32 +51,19 @@ void Algorithm::FCFS(std::vector<Process*> processVector,int& time1) {
         process->setTAT(process->getTAT());
         process->setWT(process->getWT());
         std::cout << "Metrics: " << std::endl << "CT: " << process->getCT() << ", TAT: " << process->getTAT() <<
-                ", WT: " << process->getWT() << std::endl;
+                ", WT: " << process->getWT() <<", RT: "<<process->getRT()<< std::endl;
     }
 }
 
 
 void Algorithm::SJF(std::vector<Process *> processVector,int& time1) {
-    std::sort(processVector.begin(), processVector.end(), orderByATAndName);
-    std::cout << "Sorted process vector by arrival time and name." << std::endl;
-
-    // Procesar el primer proceso
-    processVector[0]->setRT(time1);
-    time1 += processVector[0]->getBT();
-    processVector[0]->setCT(time1);
-    processVector[0]->setTAT(processVector[0]->getTAT());
-    processVector[0]->setWT(processVector[0]->getWT());
-    std::cout << "Processing first process: " << processVector[0]->getName() << std::endl;
-    std::cout << "CT: " << processVector[0]->getCT() << ", TAT: " << processVector[0]->getTAT() << ", WT: " << processVector[0]->getWT() << std::endl;
-
-    processVector.erase(processVector.begin());
-    std::sort(processVector.begin(), processVector.end(), orderByATAndName);
-    std::cout << "Sorted remaining process vector by arrival time and name." << std::endl;
+    std::sort(processVector.begin(), processVector.end(), orderByPriorityATAndName);
+    std::cout << "Executing Shortest Job First Algorithm." << std::endl;
     std::vector<Process *> processQueue;
     while (!processVector.empty() || !processQueue.empty()) {
 
 
-        // Mover procesos a la cola de procesos
+        // Moving processes to the processes queue
         for (auto it = processVector.begin(); it != processVector.end();) {
             if (time1 >= (*it)->getAT()) {
                 std::cout << "Adding process to queue: " << (*it)->getName() << std::endl;
@@ -79,7 +75,7 @@ void Algorithm::SJF(std::vector<Process *> processVector,int& time1) {
         }
 
         // Procesar los procesos en la cola
-            std::sort(processQueue.begin(), processQueue.end(), orderByBTAndName);
+            std::sort(processQueue.begin(), processQueue.end(), orderByPriorityBTAndName);
             Process* process= processQueue.front();
             process->setRT(time1);
             std::cout << "Processing process: " << process->getName() << std::endl;
@@ -87,7 +83,8 @@ void Algorithm::SJF(std::vector<Process *> processVector,int& time1) {
             process->setCT(time1);
             process->setTAT(process->getTAT());
             process->setWT(process->getWT());
-            std::cout << "CT: " << process->getCT() << ", TAT: " << process->getTAT() << ", WT: " << process->getWT() << std::endl;
+            std::cout << "Metrics: " << std::endl << "CT: " << process->getCT() << ", TAT: " << process->getTAT() <<
+            ", WT: " << process->getWT() <<", RT: "<<process->getRT()<< std::endl;
 
             // Eliminar el proceso de la cola
             processQueue.erase(std::remove(processQueue.begin(), processQueue.end(), process), processQueue.end());
@@ -97,7 +94,7 @@ void Algorithm::SJF(std::vector<Process *> processVector,int& time1) {
 }
 
 void Algorithm::STCF(std::vector<Process*> processVector,int& time1) {
-    std::sort(processVector.begin(), processVector.end(), orderByATAndName);
+    std::sort(processVector.begin(), processVector.end(), orderByPriorityATAndName);
     std::vector<Process*> processQueue;
 
     while (!processVector.empty() || !processQueue.empty()) {
@@ -114,34 +111,32 @@ void Algorithm::STCF(std::vector<Process*> processVector,int& time1) {
         }
 
         // Ordenar la cola por tiempo restante
-        std::sort(processQueue.begin(), processQueue.end(), orderByRemTimeAndName);
+        std::sort(processQueue.begin(), processQueue.end(), orderByPriorityRemTimeAndName);
         std::cout<<"Primero en la fila= "<<processQueue[0]->getName()<<std::endl;
 
         if (!processQueue.empty()) {
             Process* currentProcess = processQueue.front();
             std::cout << "Current process: " << currentProcess->getName()
                       << ", Remaining Time: " << currentProcess->getRemTime() << std::endl;
-
+            if (currentProcess->getRT() == -1) {currentProcess->setRT(time1);}
             currentProcess->setRemTime(currentProcess->getRemTime() - 1);
             time1 += 1;
 
             // Verificar si el proceso ha terminado
             if (currentProcess->getRemTime() == 0) { // Cuando queda 1, se va a 0 en la siguiente iteración
                 currentProcess->setCT(time1);
-                // Calcular el tiempo de espera
-                int waitTime = time1 - currentProcess->getBT() - currentProcess->getAT();
-
                 std::cout << "Process " << currentProcess->getName()
                           << " completed at time " << time1 << std::endl;
                 currentProcess->setTAT(currentProcess->getTAT());
-                std::cout << "Wait Time: " << currentProcess->getWT() << std::endl;
+                std::cout << "Metrics: " << std::endl << "CT: " << currentProcess->getCT() << ", TAT: " << currentProcess->getTAT() <<
+                ", WT: " << currentProcess->getWT() <<", RT: "<<currentProcess->getRT()<< std::endl;
                 // Sacar el proceso completado de la cola
                 processQueue.erase(processQueue.begin());
             }
 
             // Verificar si hay nuevos procesos que llegan y hacer el cambio si es necesario
             // Después de cada decremento de tiempo, reordenar la cola si es necesario
-            std::sort(processQueue.begin(), processQueue.end(), orderByRemTimeAndName);
+            std::sort(processQueue.begin(), processQueue.end(), orderByPriorityRemTimeAndName);
             currentProcess=nullptr;
         } else {
             // Si no hay procesos para ejecutar, avanzar el tiempo
@@ -152,7 +147,7 @@ void Algorithm::STCF(std::vector<Process*> processVector,int& time1) {
     }
 }
 void Algorithm::RR(std::vector<Process*> processVector, int q,int& time1) {
-    std::sort(processVector.begin(), processVector.end(), orderByATAndName); // Ordenar por tiempo de llegada
+    std::sort(processVector.begin(), processVector.end(), orderByPriorityATAndName); // Ordenar por tiempo de llegada
     std::vector<Process*> processQueue;
 
     while (!processVector.empty() || !processQueue.empty()) {
@@ -175,7 +170,7 @@ void Algorithm::RR(std::vector<Process*> processVector, int q,int& time1) {
             processQueue.erase(processQueue.begin()); // Sacar el proceso de la cola
             std::cout << "Current process: " << currentProcess->getName()
                       << ", Remaining Time: " << currentProcess->getRemTime() << std::endl;
-
+            if (currentProcess->getRT() == -1) {currentProcess->setRT(time1);}
             // Ejecutar el proceso por un quantum o hasta que termine
             int execTime = std::min(q, currentProcess->getRemTime()); // Quantum o el tiempo restante, lo que sea menor
             currentProcess->setRemTime(currentProcess->getRemTime() - execTime);
@@ -189,7 +184,8 @@ void Algorithm::RR(std::vector<Process*> processVector, int q,int& time1) {
                 std::cout << "Process " << currentProcess->getName()
                           << " completed at time " << time1 << std::endl;
                 currentProcess->setTAT(currentProcess->getTAT());
-                std::cout << "Wait Time: " << currentProcess->getWT() << std::endl;
+                std::cout << "Metrics: " << std::endl << "CT: " << currentProcess->getCT() << ", TAT: " << currentProcess->getTAT() <<
+                                ", WT: " << currentProcess->getWT() <<", RT: "<<currentProcess->getRT()<< std::endl;
             } else {
                 // Si no ha terminado, agregarlo de nuevo al final de la cola
                 processQueue.push_back(currentProcess);
@@ -208,67 +204,103 @@ void Algorithm::RR(std::vector<Process*> processVector, int q,int& time1) {
     }
 }
 
-void Algorithm::MLQ(std::vector<Process*> processes, int q, std::string highPriorityAlgorithm, std::string lowPriorityAlgorithm) {
+void Algorithm::MLQ(std::vector<Process*> processes, std::vector<std::string> queues,int q1,int q2, int q3) {
     std::vector<Process*> highPriorityQueue; // Cola de alta prioridad
+    std::vector<Process*> midPriorityQueue; // Cola de mediana prioridad
     std::vector<Process*> lowPriorityQueue;  // Cola de baja prioridad
 
     int time1 = 0; // Tiempo actual
 
-    // Asignar procesos a colas según su prioridad
+    // Asignar procesos a colas según su cola
     for (Process* process : processes) {
-        if (process->getPriority() == 1) {
+        if (process->getQ() == 1) {
             highPriorityQueue.push_back(process);
-        } else {
-            lowPriorityQueue.push_back(process);
         }
+        else if (process->getQ() == 2) {
+            midPriorityQueue.push_back(process);
+        }
+        else if (process->getQ()==3){lowPriorityQueue.push_back(process);
+        }
+        else{ std::cout << "There are only 3 queues"<<std::endl; }
     }
 
     // Ejecutar el algoritmo para la cola de alta prioridad
     std::cout << "Executing high priority queue." << std::endl;
-    if (highPriorityAlgorithm == "RR") {
+    if (queues[0] == "RR") {
         std::cout << "Using Round Robin for high priority queue." << std::endl;
-        RR(highPriorityQueue, q, time1);
-    } else if (highPriorityAlgorithm == "SJF") {
+        RR(highPriorityQueue, q1, time1);
+    } else if (queues[0] == "SJF") {
         std::cout << "Using Shortest Job First for high priority queue." << std::endl;
         SJF(highPriorityQueue, time1);
-    } else if (highPriorityAlgorithm == "FCFS") {
+    } else if (queues[0] == "FCFS") {
         std::cout << "Using First-Come, First-Served for high priority queue." << std::endl;
         FCFS(highPriorityQueue, time1);
+    }
+    else if (queues[0] == "STCF") {
+        std::cout << "Using Shortes Time to Complete First for high priority queue." << std::endl;
+        STCF(highPriorityQueue, time1);
+    }
+
+    // Ejecutar el algoritmo para la cola de media prioridad
+    std::cout << "Executing mid priority queue." << std::endl;
+    if (queues[1] == "RR") {
+        std::cout << "Using Round Robin for mid priority queue." << std::endl;
+        RR(midPriorityQueue, q2, time1);
+    } else if (queues[1] == "SJF") {
+        std::cout << "Using Shortest Job First for mid priority queue." << std::endl;
+        SJF(midPriorityQueue, time1);
+    } else if (queues[1] == "FCFS") {
+        std::cout << "Using First-Come, First-Served for mid priority queue." << std::endl;
+        FCFS(midPriorityQueue, time1);
+    }
+    else if (queues[1] == "STCF") {
+        std::cout << "Using Shortes Time to Complete First for mid priority queue." << std::endl;
+        STCF(midPriorityQueue, time1);
     }
 
     // Ejecutar el algoritmo para la cola de baja prioridad
     std::cout << "Executing low priority queue." << std::endl;
-    if (lowPriorityAlgorithm == "RR") {
+    if (queues[2] == "RR") {
         std::cout << "Using Round Robin for low priority queue." << std::endl;
-        RR(lowPriorityQueue, q, time1);
-    } else if (lowPriorityAlgorithm == "SJF") {
+        RR(lowPriorityQueue, q3, time1);
+    } else if (queues[2] == "SJF") {
         std::cout << "Using Shortest Job First for low priority queue." << std::endl;
         SJF(lowPriorityQueue, time1);
-    } else if (lowPriorityAlgorithm == "FCFS") {
+    } else if (queues[2] == "FCFS") {
         std::cout << "Using First-Come, First-Served for low priority queue." << std::endl;
         FCFS(lowPriorityQueue, time1);
     }
+    else if (queues[2] == "STCF") {
+        std::cout << "Using Shortes Time to Complete First for low priority queue." << std::endl;
+        STCF(lowPriorityQueue, time1);
+    }
 }
 
-void Algorithm::getAverage(std::vector<Process *> processVector) {
-    double averageWT, averageCT, averageRT, averageTAT;
-    for (auto it = processVector.begin(); it != processVector.end();it++) {
-        averageCT += (*it)->getCT();
-        averageRT += (*it)->getRT();
-        averageTAT += (*it)->getTAT();
-        averageWT += (*it)->getWT();
+std::vector<double> Algorithm::getAverage(std::vector<Process *> processVector) {
+    double averageWT = 0, averageCT = 0, averageRT = 0, averageTAT = 0;
+    std::vector<double> averagesVector;
+    for (Process* process : processVector) {
+        averageCT += process->getCT();
+        averageRT += process->getRT();
+        averageTAT += process->getTAT();
+        averageWT += process->getWT();
     }
     averageWT /= processVector.size();
+    averagesVector.push_back(averageWT);
     averageCT /= processVector.size();
+    averagesVector.push_back(averageCT);
     averageRT /= processVector.size();
+    averagesVector.push_back(averageRT);
     averageTAT /= processVector.size();
+    averagesVector.push_back(averageTAT);
+    
 
     std::cout << "**************************************" << std::endl << "Printing results:" << std::endl;
     std::cout << "Average WT: " << averageWT << std::endl;
     std::cout << "Average CT: " << averageCT << std::endl;
     std::cout << "Average RT: " << averageRT << std::endl;
     std::cout << "Average TAT: " << averageTAT << std::endl;
-
+    return averagesVector;
 
 }
 

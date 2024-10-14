@@ -10,7 +10,6 @@
 #include <string>
 
 class Algorithm {
-
 public:
     Algorithm();
     ~Algorithm()=default;
@@ -18,8 +17,8 @@ public:
     void SJF(std::vector<Process*> processVector,int& time1);
     void STCF(std::vector<Process*> processVector,int& time1);
     void RR(std::vector<Process*> processVector,int q,int& time1);
-    void MLQ(std::vector<Process*> processes, int q, std::string highPriorityAlgorithm, std::string lowPriorityAlgorithm);
-    void getAverage(std::vector<Process*> processVector);
+    void MLQ(std::vector<Process*> processes, std::vector<std::string>queues,int q1, int q2, int q3);
+    std::vector<double> getAverage(std::vector<Process*> processVector);
 
 
 };
