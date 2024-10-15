@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.29"
+						"string" : "3.28"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Exam1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Exam1-Debug-75828de21955c6bb9a39.json",
+					"jsonFile" : "target-Exam1-Debug-d5f9998d0dadd02f89fa.json",
 					"name" : "Exam1",
 					"projectIndex" : 0
 				}

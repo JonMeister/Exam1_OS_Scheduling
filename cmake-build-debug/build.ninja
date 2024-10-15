@@ -55,17 +55,17 @@ build CMakeFiles/Exam1.dir/main.cpp.obj: CXX_COMPILER__Exam1_unscanned_Debug C$:
   OBJECT_DIR = CMakeFiles\Exam1.dir
   OBJECT_FILE_DIR = CMakeFiles\Exam1.dir
 
-build CMakeFiles/Exam1.dir/Algorithm.cpp.obj: CXX_COMPILER__Exam1_unscanned_Debug C$:/Users/jonat/OneDrive/OTRODRIVE/Documents/Universidad/4_SEMESTRE$ IV_IT/Operating$ systems/Exam1/Algorithm.cpp || cmake_object_order_depends_target_Exam1
-  DEP_FILE = CMakeFiles\Exam1.dir\Algorithm.cpp.obj.d
+build CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.obj: CXX_COMPILER__Exam1_unscanned_Debug C$:/Users/jonat/OneDrive/OTRODRIVE/Documents/Universidad/4_SEMESTRE$ IV_IT/Operating$ systems/Exam1/Implementations/Algorithm.cpp || cmake_object_order_depends_target_Exam1
+  DEP_FILE = CMakeFiles\Exam1.dir\Implementations\Algorithm.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Exam1.dir
-  OBJECT_FILE_DIR = CMakeFiles\Exam1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Exam1.dir\Implementations
 
-build CMakeFiles/Exam1.dir/Process.cpp.obj: CXX_COMPILER__Exam1_unscanned_Debug C$:/Users/jonat/OneDrive/OTRODRIVE/Documents/Universidad/4_SEMESTRE$ IV_IT/Operating$ systems/Exam1/Process.cpp || cmake_object_order_depends_target_Exam1
-  DEP_FILE = CMakeFiles\Exam1.dir\Process.cpp.obj.d
+build CMakeFiles/Exam1.dir/Implementations/Process.cpp.obj: CXX_COMPILER__Exam1_unscanned_Debug C$:/Users/jonat/OneDrive/OTRODRIVE/Documents/Universidad/4_SEMESTRE$ IV_IT/Operating$ systems/Exam1/Implementations/Process.cpp || cmake_object_order_depends_target_Exam1
+  DEP_FILE = CMakeFiles\Exam1.dir\Implementations\Process.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Exam1.dir
-  OBJECT_FILE_DIR = CMakeFiles\Exam1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Exam1.dir\Implementations
 
 
 # =============================================================================
@@ -75,7 +75,7 @@ build CMakeFiles/Exam1.dir/Process.cpp.obj: CXX_COMPILER__Exam1_unscanned_Debug 
 #############################################
 # Link the executable Exam1.exe
 
-build Exam1.exe: CXX_EXECUTABLE_LINKER__Exam1_Debug CMakeFiles/Exam1.dir/main.cpp.obj CMakeFiles/Exam1.dir/Algorithm.cpp.obj CMakeFiles/Exam1.dir/Process.cpp.obj
+build Exam1.exe: CXX_EXECUTABLE_LINKER__Exam1_Debug CMakeFiles/Exam1.dir/main.cpp.obj CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.obj CMakeFiles/Exam1.dir/Implementations/Process.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Exam1.dir

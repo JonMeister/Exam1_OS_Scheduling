@@ -1,6 +1,6 @@
 // main.cpp
 #include <iostream>
-#include "Algorithm.h"
+#include "./Headers/Algorithm.h"
 #include <fstream>
 #include <sstream>
 #include <iomanip>

@@ -2,7 +2,7 @@
 // Created by jonat on 04/10/2024.
 //
 
-#include "Algorithm.h"
+#include "../Headers/Algorithm.h"
 
 #include <algorithm>
 #include <iostream>
