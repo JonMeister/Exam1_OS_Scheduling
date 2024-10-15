@@ -1,7 +1,7 @@
-CMakeFiles/Exam1.dir/Process.cpp.o: \
- /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Process.cpp \
+CMakeFiles/Exam1.dir/Implementations/Process.cpp.o: \
+ /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/Process.cpp \
  /usr/include/stdc-predef.h \
- /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Process.h \
+ /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/../Headers/Process.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

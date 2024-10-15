@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Algorithm.cpp" "CMakeFiles/Exam1.dir/Algorithm.cpp.o" "gcc" "CMakeFiles/Exam1.dir/Algorithm.cpp.o.d"
-  "/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Process.cpp" "CMakeFiles/Exam1.dir/Process.cpp.o" "gcc" "CMakeFiles/Exam1.dir/Process.cpp.o.d"
+  "/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/Algorithm.cpp" "CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o" "gcc" "CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o.d"
+  "/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/Process.cpp" "CMakeFiles/Exam1.dir/Implementations/Process.cpp.o" "gcc" "CMakeFiles/Exam1.dir/Implementations/Process.cpp.o.d"
   "/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/main.cpp" "CMakeFiles/Exam1.dir/main.cpp.o" "gcc" "CMakeFiles/Exam1.dir/main.cpp.o.d"
   )
 

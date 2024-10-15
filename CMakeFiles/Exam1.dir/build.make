@@ -83,46 +83,46 @@ CMakeFiles/Exam1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Exam1.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/main.cpp -o CMakeFiles/Exam1.dir/main.cpp.s
 
-CMakeFiles/Exam1.dir/Algorithm.cpp.o: CMakeFiles/Exam1.dir/flags.make
-CMakeFiles/Exam1.dir/Algorithm.cpp.o: Algorithm.cpp
-CMakeFiles/Exam1.dir/Algorithm.cpp.o: CMakeFiles/Exam1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Exam1.dir/Algorithm.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Exam1.dir/Algorithm.cpp.o -MF CMakeFiles/Exam1.dir/Algorithm.cpp.o.d -o CMakeFiles/Exam1.dir/Algorithm.cpp.o -c /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Algorithm.cpp
+CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o: CMakeFiles/Exam1.dir/flags.make
+CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o: Implementations/Algorithm.cpp
+CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o: CMakeFiles/Exam1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o -MF CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o.d -o CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o -c /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/Algorithm.cpp
 
-CMakeFiles/Exam1.dir/Algorithm.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Exam1.dir/Algorithm.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Algorithm.cpp > CMakeFiles/Exam1.dir/Algorithm.cpp.i
+CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/Algorithm.cpp > CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.i
 
-CMakeFiles/Exam1.dir/Algorithm.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Exam1.dir/Algorithm.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Algorithm.cpp -o CMakeFiles/Exam1.dir/Algorithm.cpp.s
+CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/Algorithm.cpp -o CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.s
 
-CMakeFiles/Exam1.dir/Process.cpp.o: CMakeFiles/Exam1.dir/flags.make
-CMakeFiles/Exam1.dir/Process.cpp.o: Process.cpp
-CMakeFiles/Exam1.dir/Process.cpp.o: CMakeFiles/Exam1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Exam1.dir/Process.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Exam1.dir/Process.cpp.o -MF CMakeFiles/Exam1.dir/Process.cpp.o.d -o CMakeFiles/Exam1.dir/Process.cpp.o -c /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Process.cpp
+CMakeFiles/Exam1.dir/Implementations/Process.cpp.o: CMakeFiles/Exam1.dir/flags.make
+CMakeFiles/Exam1.dir/Implementations/Process.cpp.o: Implementations/Process.cpp
+CMakeFiles/Exam1.dir/Implementations/Process.cpp.o: CMakeFiles/Exam1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Exam1.dir/Implementations/Process.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Exam1.dir/Implementations/Process.cpp.o -MF CMakeFiles/Exam1.dir/Implementations/Process.cpp.o.d -o CMakeFiles/Exam1.dir/Implementations/Process.cpp.o -c /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/Process.cpp
 
-CMakeFiles/Exam1.dir/Process.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Exam1.dir/Process.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Process.cpp > CMakeFiles/Exam1.dir/Process.cpp.i
+CMakeFiles/Exam1.dir/Implementations/Process.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Exam1.dir/Implementations/Process.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/Process.cpp > CMakeFiles/Exam1.dir/Implementations/Process.cpp.i
 
-CMakeFiles/Exam1.dir/Process.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Exam1.dir/Process.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Process.cpp -o CMakeFiles/Exam1.dir/Process.cpp.s
+CMakeFiles/Exam1.dir/Implementations/Process.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Exam1.dir/Implementations/Process.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Implementations/Process.cpp -o CMakeFiles/Exam1.dir/Implementations/Process.cpp.s
 
 # Object files for target Exam1
 Exam1_OBJECTS = \
 "CMakeFiles/Exam1.dir/main.cpp.o" \
-"CMakeFiles/Exam1.dir/Algorithm.cpp.o" \
-"CMakeFiles/Exam1.dir/Process.cpp.o"
+"CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o" \
+"CMakeFiles/Exam1.dir/Implementations/Process.cpp.o"
 
 # External object files for target Exam1
 Exam1_EXTERNAL_OBJECTS =
 
 Exam1: CMakeFiles/Exam1.dir/main.cpp.o
-Exam1: CMakeFiles/Exam1.dir/Algorithm.cpp.o
-Exam1: CMakeFiles/Exam1.dir/Process.cpp.o
+Exam1: CMakeFiles/Exam1.dir/Implementations/Algorithm.cpp.o
+Exam1: CMakeFiles/Exam1.dir/Implementations/Process.cpp.o
 Exam1: CMakeFiles/Exam1.dir/build.make
 Exam1: CMakeFiles/Exam1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Exam1"

@@ -150,8 +150,8 @@ CMakeFiles/Exam1.dir/main.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Algorithm.h \
- /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/Process.h \
+ /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/./Headers/Algorithm.h \
+ /home/jonmeister/1_SemesterIV/Operating_systems/Exam1/Exam1_OS_Scheduling/./Headers/Process.h \
  /usr/include/c++/13/queue /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
