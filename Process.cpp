@@ -22,7 +22,7 @@ int Process::getBT() {return BT;}
 int Process::getAT() {return AT;}
 int Process::getCT() {return CT;}
 int Process::getRT() {return RT;}
-int Process::getWT() {return TAT-BT;}
+int Process::getWT() {return CT-AT-BT;}
 int Process::getTAT() {return CT-AT;}
 int Process::getRemTime() {return remTime;}
 int Process::getP() {return P;}
