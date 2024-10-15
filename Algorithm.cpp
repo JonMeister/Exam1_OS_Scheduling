@@ -67,10 +67,22 @@ bool orderByPriorityBTAndName(Process* a, Process* b) {
 }
 
 void Algorithm::FCFS(std::vector<Process*> processVector,int& time1) {
-    std::sort(processVector.begin(), processVector.end(), orderByPriorityATAndName);
     std::cout << "Executing First Come First Served Algorithm." << std::endl;
-    for (Process* process : processVector) {
+    std::vector<Process *> processQueue;
 
+    while (!processVector.empty() || !processQueue.empty()) {
+        // Moving processes to the processes queue
+        for (auto it = processVector.begin(); it != processVector.end();) {
+            if (time1 >= (*it)->getAT()) {
+                std::cout << "Adding process to queue: " << (*it)->getName() << std::endl;
+                processQueue.push_back(*it);
+                it = processVector.erase(it);
+            } else {
+                ++it;
+            }
+        }
+        std::sort(processQueue.begin(), processQueue.end(), orderByPriorityATAndName);
+        Process* process = processQueue.front();
         std::cout <<"Attending process "<<process->getName()<<" in time: "<<time1<<std::endl;
         process->setRT(time1);
         time1+=process->getBT();
@@ -78,6 +90,7 @@ void Algorithm::FCFS(std::vector<Process*> processVector,int& time1) {
         process->setCT(time1);
         std::cout << "Metrics: " << std::endl << "CT: " << process->getCT() << ", TAT: " << process->getTAT() <<
                 ", WT: " << process->getWT() <<", RT: "<<process->getRT()<< std::endl;
+        processQueue.erase(processQueue.begin());
     }
 }
 

@@ -14,7 +14,7 @@
  * This class encapsulates the attributes and behaviors of a process
  * in a scheduling simulation, including burst time, arrival time,
  * completion time, response time, waiting time, turnaround time,
- * remaining time, priority, and quantum.
+ * remaining time, priority, and queue.
  */
 class Process {
 protected:
